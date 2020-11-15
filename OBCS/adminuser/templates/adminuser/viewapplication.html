@@ -1,0 +1,51 @@
+{% load static %}
+{% include 'adminuser/header.html' %}
+    <div class="col-sm-9 offset-sm-3 offset-md-2 ">
+        <div style="margin-top:100px;">
+            <h5 class="alert alert-light text-right shadow-sm">{{page}} Applications</h5>
+        </div>
+        <div class="container-fluid " >
+            <div class="row">
+                <div class="col-sm-8">
+                    <table class="table table-hover border shadow-sm">
+                        <thead>
+                            <tr>
+                                <th scope="row">ID</th>
+                                <th scope="row">DOB</th>
+                                <th scope="row">Gender</th>
+                                <th scope="row">Name</th>
+                                <th scope="row">Birth Place</th>
+                                <th scope="row">Father Name</th>
+                                <th scope="row">Phone Number</th>
+                                <th scope="row">Email ID</th>
+                                <th scope="row">Date Of Application</th>
+                                <th scope="row">Action</th>
+                            </tr>
+                        </thead>
+                            <tbody>
+                            {% for application in applications %}
+                                <tr>
+                                    <td>{{application.id}}</td>
+                                    <td>{{application.dob}}</td>
+                                    <td>{{application.gender}}</td>
+                                    <td>{{application.name}}</td>
+                                    <td>{{application.birth_place}}</td>
+                                    <td>{{application.fname}}</td>
+                                    <td>{{application.phone}}</td>
+                                    <td>{{application.email}}</td>
+                                    <td>{{application.doa}}</td>
+                                    <td>
+                                        <a href="{% url 'selectapplication' application.id %}" class="btn border"><i class="fas fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}   
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+{% include 'adminuser/footer.html' %}
+
+       

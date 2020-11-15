@@ -1,0 +1,78 @@
+{% load static %}
+{% include 'adminuser/header.html' %}
+    <div class="col-sm-9 offset-sm-3 offset-md-2 ">
+        <div style="margin-top:100px;">
+            <h5 class="alert alert mb-3-light text-right shadow-sm">{{application.status}} Applications</h5>
+            <h5 class="text-danger">Application ID:  {{application.id}}</h5>
+        </div>
+        <div class="container-fluid " >
+            <div class="row mt-5">
+                <div class="col-sm-6">
+                   <table style="border: 1px solid black;border-collapse: collapse;width:100%;">
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Full Name</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{application.name}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Date of Birth</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{application.dob}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Gender</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{application.gender}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Place of Birth</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{application.birth_place}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Father Name</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{application.fname}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Permanent Address</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{application.permanent_address}}</td>
+                        </tr>
+                        
+                    </table>
+                </div>
+                <div class="col-sm-6">
+                    <table style="border: 1px solid black;border-collapse: collapse;width:100%;">
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Postal Address</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{application.postal_address}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Phone Number</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{application.phone}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Email Address</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{application.email}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Date of Application</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{application.doa}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Status</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{application.status}}</td>
+                        </tr>
+                         <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Admin Remarks</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{application.remark}}</td>
+                        </tr>
+                   </table>
+                </div>
+            </div>
+        </div>
+        {% if application.status == 'Pending' %}
+         <div class="container text-center my-5">
+            <a href="{% url 'takeaction' application.id %}" class="btn btn-info btn-lg">Take Action</a>
+        </div>
+        {% endif %}
+    </div>
+   
+{% include 'adminuser/footer.html' %}
+
+       

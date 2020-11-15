@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}
+SignUp
+{% endblock title %}
+
+{% block content %}
+<div class="container-fluid" >
+    {% include 'core/navigationbar.html' %}
+    <div class="row">
+                <div class="col-sm-6 offset-3  border p-4 mb-2 shadow" style="border-radius:30px;margin-top:50px;">
+                    {% if messages %}
+                        {% for message in messages %}
+                        <h4 {% if message.tags %} class="alert alert-{{message.tags}}"{% endif %}>{{message}}</h4>
+                        {% endfor %}
+                    {% endif %}
+                    <h4 class="font-weight-bold text-center"><i class="fas fa-user mr-3"></i>User Registration</h4>
+                        <form action="" method="POST" novalidate>
+                        {% csrf_token %}
+                        {% if form.non_field_errors %}
+                            {% for error in form.non_field_errors %}
+                            <span style="color:red">{{error}}</span>
+                            {% endfor %}
+                        {% endif %}
+                        {% for field in form %}
+                        <span style="color:red">{{field.errors|striptags}}</span>
+                        <div class="form-group font-weight-bold">
+                            {{field.label_tag}}{{field}}
+                            </div>
+                        {% endfor %}
+                        <div class="text-center py-2">
+                            <input type="submit" class="btn btn-primary" value="Sign in">
+                            <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                        <a href="{% url 'userlogin' %}">have an account ? Login</a>
+                        </form>
+                </div>
+    </div>
+</div>
+{% endblock content %}

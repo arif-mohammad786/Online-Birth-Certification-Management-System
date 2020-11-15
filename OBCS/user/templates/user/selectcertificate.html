@@ -1,0 +1,72 @@
+{% load static %}
+{% include 'user/header.html' %}
+    <div class="col-sm-9 offset-sm-3 offset-md-2 ">
+        <div style="margin-top:100px;">
+            <h5 class="text-danger">Application ID:  {{certificate.id}}<h5/>
+        </div>
+        <div class="container-fluid " >
+            <div class="row mt-5">
+                <div class="col-sm-6">
+                   <table style="border: 1px solid black;border-collapse: collapse;width:100%;">
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Full Name</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{certificate.name}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Date of Birth</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{certificate.dob}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Gender</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{certificate.gender}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Place of Birth</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{certificate.birth_place}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Father Name</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{certificate.fname}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Permanent Address</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{certificate.permanent_address}}</td>
+                        </tr>
+                        
+                    </table>
+                </div>
+                <div class="col-sm-6">
+                    <table style="border: 1px solid black;border-collapse: collapse;width:100%;">
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Postal Address</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{certificate.postal_address}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Phone Number</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{certificate.phone}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Email Address</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{certificate.email}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Date of certificate</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{certificate.doa}}</td>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Status</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{certificate.status}}</td>
+                        </tr>
+                         <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">Admin Remarks</th>
+                            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;text-align: left;">{{certificate.remark}}</td>
+                        </tr>
+                   </table>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+{% include 'user/footer.html' %}
+
+       

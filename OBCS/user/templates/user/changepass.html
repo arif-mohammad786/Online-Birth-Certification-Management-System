@@ -1,0 +1,29 @@
+
+{% include 'user/header.html' %}
+    <div class="col-sm-6 offset-1 main">
+        <div style="margin-top:100px;">
+            <h5 class="alert alert-light text-right shadow-sm">Change Password</h5>
+        </div>
+        <form action="" method="POST" novalidate>
+        {% csrf_token %}
+            {% if messages %}
+                {% for message in messages %}
+                <h4 {% if message.tags %} class="text-{{message.tags}}"{% endif %}>{{message}}</h4>
+                {% endfor %}
+            {% endif %}
+            {% for field in form %}
+                <span style="color:red">{{field.errors|striptags}}</span>
+                <div class="form-group">
+                    {{field.label_tag}}{{field}}
+                </div>
+            {% endfor %}
+        
+        <div class="text-center my-3">
+            <input type="submit" class="btn btn-danger" value="Change">
+            <a href="{% url 'dashboard' %}" class="btn btn-secondary">Dashboard</a>
+        </div>
+        </form>
+    </div>
+{% include 'user/footer.html' %}
+
+       
